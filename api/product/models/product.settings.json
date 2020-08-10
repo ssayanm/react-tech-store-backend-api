@@ -14,7 +14,8 @@
       "required": true
     },
     "price": {
-      "type": "decimal"
+      "type": "decimal",
+      "default": 20.99
     },
     "description": {
       "type": "richtext",

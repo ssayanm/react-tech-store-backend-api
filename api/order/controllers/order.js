@@ -6,7 +6,7 @@ const stripe = require("stripe")(api_key);
  * to customize this controller
  */
 
-module.exports = () => {
+module.exports = {
   create: async (ctx) => {
     const { name, total, items, stripeTokenId } = ctx.request.body;
     const { id } = ctx.state.user;
@@ -17,6 +17,7 @@ module.exports = () => {
       source: stripeTokenId,
       description: `order ${new Date()} by ${ctx.state.user.username}`,
     });
+
     const order = await strapi.services.order.create({
       name,
       total,
@@ -24,5 +25,5 @@ module.exports = () => {
       user: id,
     });
     return order;
-  };
+  },
 };
