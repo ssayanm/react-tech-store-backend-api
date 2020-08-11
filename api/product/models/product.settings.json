@@ -35,6 +35,13 @@
     "featured": {
       "type": "boolean",
       "default": false
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "free_shipping": {
+      "type": "boolean"
     }
   }
 }
