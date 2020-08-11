@@ -15,7 +15,7 @@ module.exports = {
       amount: Math.round(total * 100),
       currency: "inr",
       source: stripeTokenId,
-      description: `order ${new Date()} by ${ctx.state.user.username}`,
+      description: `order ${new Date()} by ₹{ctx.state.user.username}`,
     });
 
     const order = await strapi.services.order.create({
